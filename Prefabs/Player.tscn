@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo6bmdw33xfdx"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_fl87d"]
+[ext_resource type="Texture2D" uid="uid://5p11s1s6vumu" path="res://icon.svg" id="2_i3l72"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbbri"]
+albedo_texture = ExtResource("2_i3l72")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_syrnq"]
+radius = 0.25
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_fl87d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_cbbri")
+mesh = SubResource("CapsuleMesh_syrnq")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -2.99003e-08, 8.21505e-08, 0, 0.939693, 0.34202, -8.74228e-08, 0.34202, -0.939693, 0, 0.56, 0)
+near = 0.3
